@@ -1,8 +1,8 @@
-import org.testng.annotations.AfterSuite;
-import org.testng.annotations.AfterTest;
-import org.testng.annotations.BeforeSuite;
-import org.testng.annotations.BeforeTest;
+import org.testng.annotations.*;
+import utils.DriverManager;
 
+import java.net.MalformedURLException;
+import java.util.concurrent.TimeUnit;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -12,22 +12,30 @@ public class BaseTest {
     protected Level level = Level.INFO;
 
     @BeforeTest
-    public void setUpTest() {
+    public void setUpTest() throws MalformedURLException {
+        DriverManager.setDriver();
         LOGGER.log(level, "test started");
+    }
+
+    @BeforeMethod
+    public void prepareActivity() throws InterruptedException {
+        TimeUnit.SECONDS.sleep(3);
     }
 
     @AfterTest
     public void dropDownTest() {
+        DriverManager.getDriver().quit();
         LOGGER.log(level, "test finished");
+
     }
 
     @BeforeSuite
-    public void suiteStarted() {
+    public void suiteStart() throws MalformedURLException {
         LOGGER.log(level, "suite started");
     }
 
     @AfterSuite
-    public void suiteFinished() {
+    public void suiteFinish() {
         LOGGER.log(level, "suite started");
     }
 }

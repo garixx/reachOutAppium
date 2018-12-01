@@ -10,7 +10,7 @@
         <!--</groups>-->
 
         <classes>
-            <class name="test"/>
+            <class name="LoginTest"/>
         </classes>
     </test>
 
