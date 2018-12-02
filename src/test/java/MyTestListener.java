@@ -7,11 +7,18 @@ import org.testng.ITestListener;
 import org.testng.ITestResult;
 import utils.DriverManager;
 
+import java.net.MalformedURLException;
+
 public class MyTestListener extends BaseTest implements ITestListener {
 
     @Override
     public void onTestFailure(ITestResult iTestResult) {
         saveAppScreenShot();
+        try {
+            DriverManager.setDriver();
+        } catch (MalformedURLException e) {
+            e.printStackTrace();
+        }
     }
 
     @Attachment(value = "App screenshot", type = "image/png")

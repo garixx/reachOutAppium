@@ -4,46 +4,36 @@ import io.qameta.allure.Step;
 import org.openqa.selenium.By;
 import utils.DriverManager;
 
-public class LoginPage extends BaseActions{
+public class LoginPage extends BasePage{
 
     @Step
-    public LoginPage loginViaFacebook() {
+    public FacebookLoginPage loginViaFacebook() {
         waitClickable(By.id("com.reachout:id/bFacebook")).click();
-        return this;
+        return new FacebookLoginPage();
     }
 
     @Step
-    public LoginPage loginViaGoogle() {
+    public GoogleLoginPage loginViaGoogle() {
         waitClickable(By.id("com.reachout:id/bGoogle")).click();
-        return this;
+        return new GoogleLoginPage();
     }
 
     @Step
-    public LoginPage returnToLoginPageFromFacebook() {
-        waitClickable(By.id("m_login_email")).sendKeys("gfgfdsgf");
-        DriverManager.getDriver().navigate().back();
-        DriverManager.getDriver().navigate().back();
-        return this;
+    public EmailLoginPage loginViaEmail() {
+        waitClickable(By.id("com.reachout:id/bEmailLogin")).click();
+        return new EmailLoginPage();
     }
 
     @Step
-    public LoginPage returnToLoginPageFromGoogle() {
-        waitClickable(By.id("identifierId")).sendKeys("hgdg");
-        DriverManager.getDriver().navigate().back();
-        return this;
+    public EmailSignUpPage signUpViaEmail(){
+        waitClickable(By.id("com.reachout:id/bEmailSignup")).click();
+        return new EmailSignUpPage();
     }
 
     @Step
     public LoginPage checkHeaders() {
-        softAssert.assertTrue(waitVisible(By.id("com.reachout:id/tvSocialConnect"))
-                .getText().equals("Social connect:"));
-        softAssert.assertTrue(waitVisible(By.id("com.reachout:id/tvEmailConnect"))
-                .getText().equals("Email connect:"));
-        return this;
-    }
-
-    public LoginPage assertAll() {
-        softAssert.assertAll();
+        id("com.reachout:id/tvSocialConnect").shouldHave("Social connect:");
+        id("com.reachout:id/tvEmailConnect").shouldHave("Email connect:");
         return this;
     }
 

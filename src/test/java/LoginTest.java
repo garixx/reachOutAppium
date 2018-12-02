@@ -13,28 +13,42 @@ import static org.testng.Assert.assertTrue;
 @Feature("As User I can login using Email, Google, Facebook")
 public class LoginTest extends BaseTest{
 
-
-    @Description("Check login using google")
     @Story("As user I can login with my Google account")
-    @Test
+    @Test(description = "Check login using google")
     public void checkLoginViaGoogle() {
         new LoginPage()
                 .checkHeaders()
                 .loginViaGoogle()
-                .returnToLoginPageFromGoogle()
-                .assertAll();
+                .returnToLoginPageFromGooglePage();
     }
 
-    @Description("Check login using facebook")
     @Story("As user I can login with my Facebook account")
-    @Test
-    public void checkLoginViaFacebook() throws InterruptedException {
+    @Test(description = "Check login using facebook")
+    public void checkLoginViaFacebook() {
 
         new LoginPage()
-                .checkHeaders()
                 .loginViaFacebook()
-                .returnToLoginPageFromFacebook()
-                .assertAll();
+                .returnToLoginPageFromFacebookPage();
+    }
+
+    @Story("As user I can login with my email")
+    @Test(description = "Check login using email")
+    public void checkLoginViaEmail() {
+
+        new LoginPage()
+                .loginViaEmail()
+                .verifyPage()
+                .returnToLoginPageFromEmailLoginPage();
+    }
+
+    @Story("As user I can sign up with my email")
+    @Test(description = "Check sign up into app using email")
+    public void checkSingUpViaEmail() {
+
+        new LoginPage()
+                .signUpViaEmail()
+                .returnToLoginPageFromEmailSignupPage();
+
     }
 
 }
