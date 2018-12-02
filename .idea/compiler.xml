@@ -7,6 +7,7 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="appium" />
+        <module name="reachOutAppium" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel target="8" />

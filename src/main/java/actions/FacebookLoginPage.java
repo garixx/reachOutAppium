@@ -8,7 +8,7 @@ public class FacebookLoginPage extends BasePage {
 
     @Step
     public LoginPage returnToLoginPageFromFacebookPage() {
-        waitClickable(By.id("m_login_email")).sendKeys("gfgfdsgf");
+        waitClickable(By.id("m_login_email")).sendKeys("some@email.com");
         DriverManager.getDriver().navigate().back();
         DriverManager.getDriver().navigate().back();
         return new LoginPage();
