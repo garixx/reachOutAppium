@@ -28,4 +28,10 @@ public class BasePage {
     protected WebElement elementWithText(String s) {
         return DriverManager.getDriver().findElementByAndroidUIAutomator("new UiSelector().text(\"" + s + "\")");
     }
+
+    protected WebElement scrollToText(String s) {
+        return DriverManager.getDriver()
+                .findElementByAndroidUIAutomator("new UiScrollable(new UiSelector().scrollable(true).instance(0))" +
+                        ".scrollIntoView(new UiSelector().textContains(\"" + s + "\").instance(0))");
+    }
 }

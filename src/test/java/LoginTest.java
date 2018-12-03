@@ -18,27 +18,14 @@ public class LoginTest extends BaseTest{
 
     @Story("As user I can login with my email")
     @Test(description = "Check login using email")
-    public void checkLoginViaEmail() throws InterruptedException {
+    public void checkLoginViaEmail() {
 
         new LoginPage()
                 .loginViaEmail()
                 .loginAsValidUser()
-                .goToSettingPage();
-
-        TimeUnit.SECONDS.sleep(5);
-    }
-
-//    @Story("xpath experiments")
-//    @Test
-//    public void ccc() {
-//        //DriverManager.getDriver().findElementByXPath("/hierarchy//android.widget.TextView[6]").click();
-//        DriverManager.getDriver().findElementByXPath("/hierarchy//android.widget.TextView[contains(@text,'Email Login')]").click();
-//    }
-
-    @Test(enabled = false)
-    public void rr() throws InterruptedException {
-        //DriverManager.getDriver().findElementByAndroidUIAutomator("new UiSelector().text(\"Email Login\")").click();
-        //DriverManager.getDriver().findElementByAndroidUIAutomator("new UiSelector().resourceId(\"com.reachout:id/bEmailLogin\")").click();
+                .goToSettingPage()
+                .findLogoutButton()
+                .logout();
     }
 
 }
