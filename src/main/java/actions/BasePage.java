@@ -21,20 +21,11 @@ public class BasePage {
     protected WebDriverWait wait = new WebDriverWait(DriverManager.getDriver(), 30);
     protected WebElement we;
 
-    protected WebElement waitClickable(By element) {
-        return wait.until(ExpectedConditions.elementToBeClickable(element));
-    }
-    protected WebElement waitVisible(By element) {
-        return wait.until(ExpectedConditions.visibilityOfElementLocated(element));
+    protected WebElement elementWithId(String s) {
+        return DriverManager.getDriver().findElementByAndroidUIAutomator("new UiSelector().resourceId(\"" + s + "\")");
     }
 
-    protected BasePage id(String s) {
-        we = waitClickable(By.id(s));
-        return this;
-    }
-
-    protected void shouldHave(String s) {
-        assertTrue(we.isDisplayed());
-        assertEquals(we.getText(), (s));
+    protected WebElement elementWithText(String s) {
+        return DriverManager.getDriver().findElementByAndroidUIAutomator("new UiSelector().text(\"" + s + "\")");
     }
 }

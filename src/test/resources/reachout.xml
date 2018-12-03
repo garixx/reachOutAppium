@@ -1,8 +1,8 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
 
-<suite name="Caesar Regression Suite" verbose="1" >
+<suite name="Reachout social app test suite" verbose="1" >
 
-    <test name="107">
+    <test name="Login functionality">
         <!--<groups>-->
             <!--<run>-->
                 <!--<include name="login"/>-->
