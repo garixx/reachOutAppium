@@ -21,20 +21,7 @@ public class BasePage {
     protected WebDriverWait wait = new WebDriverWait(DriverManager.getDriver(), 30);
     protected WebElement we;
 
-    protected WebElement waitClickable(By element) {
-        return wait.until(ExpectedConditions.elementToBeClickable(element));
-    }
-    protected WebElement waitVisible(By element) {
-        return wait.until(ExpectedConditions.visibilityOfElementLocated(element));
-    }
-
-    protected BasePage id(String s) {
-        we = waitClickable(By.id(s));
-        return this;
-    }
-
-    protected void shouldHave(String s) {
-        assertTrue(we.isDisplayed());
-        assertEquals(we.getText(), (s));
+    protected WebElement elementWithXpath(String s) {
+        return DriverManager.getDriver().findElementByXPath(s);
     }
 }

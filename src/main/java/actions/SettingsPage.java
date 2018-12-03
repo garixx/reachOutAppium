@@ -15,8 +15,8 @@ public class SettingsPage extends BasePage {
     }
 
     public LoginPage logout() {
-        waitClickable(By.id("com.reachout:id/tvLogout")).click();
-        waitClickable(By.id("android:id/button1")).click();
+        elementWithXpath("com.reachout:id/tvLogout").click();
+        elementWithXpath("android:id/button1").click();
         return new LoginPage();
     }
 
