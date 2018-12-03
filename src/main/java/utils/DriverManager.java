@@ -25,7 +25,7 @@ public class DriverManager {
         caps.setCapability("appActivity", "com.cleveroad.reachout.ui.activity.SplashActivity");
         //caps.setCapability(MobileCapabilityType.APP,new File("src\\main\\resources\\reachout.apk"));
         caps.setCapability("deviceName","emulator-5554");
-        caps.setCapability(MobileCapabilityType.AUTOMATION_NAME, "UiAutomator2");
+        //caps.setCapability(MobileCapabilityType.AUTOMATION_NAME, "UiAutomator2");
 
         driver = new AndroidDriver(new URL("http://127.0.0.1:4723/wd/hub"),caps);
         return driver;

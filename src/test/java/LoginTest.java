@@ -5,6 +5,8 @@ import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 import utils.DriverManager;
 
+import java.util.concurrent.TimeUnit;
+
 import static org.testng.Assert.assertTrue;
 
 @Listeners(MyTestListener.class)
@@ -61,13 +63,17 @@ public class LoginTest extends BaseTest{
 //    }
 
     @Test
-    public void rr() {
+    public void rr() throws InterruptedException {
         //DriverManager.getDriver().findElementByAndroidUIAutomator("new UiSelector().text(\"Email Login\")").click();
         //DriverManager.getDriver().findElementByAndroidUIAutomator("new UiSelector().resourceId(\"com.reachout:id/bEmailLogin\")").click();
         resourceId("com.reachout:id/bEmailLogin").click();
         resourceId("com.reachout:id/etEmail").sendKeys("akirraint@gmail.com");
         resourceId("com.reachout:id/etPassword").sendKeys("n12345");
         resourceId("com.reachout:id/bEmailLogin").click();
+        TimeUnit.SECONDS.sleep(5);
+
+
+
 
 
     }
