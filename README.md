@@ -1,6 +1,14 @@
 # ReachOutAppium
 Example appium test suite for ReachOut social network android app <br/>
 Maven + Appium java client + TestNG + Allure reporting
+
+# Samples
+
+- <i>uiautomator2</i> branch for examples using native android code with UiAutomator2
+  Watch DriverManager.java
+- <i>xpath</i> branch for examples using xpath
+  Watch actions package classes
+  
 # How to run
 Before runnung you should have:
 - Java 8 JDK installed
@@ -13,7 +21,7 @@ Before runnung you should have:
 - npm install -g appium executed (appium installed)
 - cmd>appium executed (appium up and listening)
 
-# Locators hunting With Appium Desktop:
+# Locators hunting With Appium Desktop
 - Download and install Appium Desktop from official site
 - Ensure cmd>adb devices returned not empty connected devices list
 - Run Appium Desktop
@@ -28,7 +36,7 @@ Before runnung you should have:
   
 - Select elements at device and watch locators info
 
-# Locators hunting With Android UiAutomatorViewer:
+# Locators hunting With Android UiAutomatorViewer
 
 - you should have Android SDK installed
 - At <android-sdk>/tools/ file uiautomatorviewer.bat (for Windows) or uiautomatorviewer is situaited
