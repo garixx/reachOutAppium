@@ -34,4 +34,10 @@ public class BasePage {
                 .findElementByAndroidUIAutomator("new UiScrollable(new UiSelector().scrollable(true).instance(0))" +
                         ".scrollIntoView(new UiSelector().textContains(\"" + s + "\").instance(0))");
     }
+    
+    protected WebElement scrollToText2(String s) {
+        return DriverManager.getDriver()
+                .findElementByAndroidUIAutomator("new UiScrollable(new UiSelector().scrollable(true).instance(0))" +
+                        ".getChildByText(new UiSelector().className(\"android.widget.TextView\"), \"" + s + "\")");
+    }
 }
