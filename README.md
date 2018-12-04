@@ -5,7 +5,7 @@ Maven + Appium java client + TestNG + Allure reporting
 # Samples
 
 - <i>uiautomator2</i> branch for examples using native android code with UiAutomator2<br/>
-  Watch DriverManager.java
+  Watch DriverManager.java and BasePage.java classes
 - <i>xpath</i> branch for examples using xpath<br/>
   Watch actions package classes
   
