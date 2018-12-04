@@ -4,9 +4,9 @@ Maven + Appium java client + TestNG + Allure reporting
 
 # Samples
 
-- <i>uiautomator2</i> branch for examples using native android code with UiAutomator2
+- <i>uiautomator2</i> branch for examples using native android code with UiAutomator2<br/>
   Watch DriverManager.java
-- <i>xpath</i> branch for examples using xpath
+- <i>xpath</i> branch for examples using xpath<br/>
   Watch actions package classes
   
 # How to run
@@ -39,7 +39,7 @@ Before runnung you should have:
 # Locators hunting With Android UiAutomatorViewer
 
 - you should have Android SDK installed
-- At <android-sdk>/tools/ file uiautomatorviewer.bat (for Windows) or uiautomatorviewer is situaited
+- At /android-sdk-path/tools/ file uiautomatorviewer.bat (for Windows) or uiautomatorviewer is situaited
 - Ensure cmd>adb devices returned not empty connected devices list
 - Run it
 - Wait for UiAutomatorViewer window appeared
