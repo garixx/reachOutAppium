@@ -13,9 +13,7 @@ Before runnung you should have:
 - npm install -g appium executed (appium installed)
 - cmd>appium executed (appium up and listening)
 
-# Locators hunting
-
-With Appium Desktop:
+# Locators hunting With Appium Desktop:
 - Download and install Appium Desktop from official site
 - Ensure cmd>adb devices returned not empty connected devices list
 - Run Appium Desktop
@@ -28,4 +26,14 @@ With Appium Desktop:
 - Connect to your device or emulator using capabilities: <br/>
   ![alt text](https://raw.githubusercontent.com/garixx/reachOutAppium/master/Screenshot_19.jpg)
   
+- Select elements at device and watch locators info
+
+# Locators hunting With Android UiAutomatorViewer:
+
+- you should have Android SDK installed
+- At <android-sdk>/tools/ file uiautomatorviewer.bat (for Windows) or uiautomatorviewer is situaited
+- Ensure cmd>adb devices returned not empty connected devices list
+- Run it
+- Wait for UiAutomatorViewer window appeared
+- Press 'Make snapshot' button
 - Select elements at device and watch locators info
