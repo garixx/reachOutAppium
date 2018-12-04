@@ -12,3 +12,20 @@ Before runnung you should have:
 - nodejs installed
 - npm install -g appium executed (appium installed)
 - cmd>appium executed (appium up and listening)
+
+# Locators hunting
+
+With Appium Desktop:
+- Download and install Appium Desktop from official site
+- Ensure cmd>adb devices returned not empty connected devices list
+- Run Appium Desktop
+- Start Appium server <br/>
+  ![alt text](https://raw.githubusercontent.com/garixx/reachOutAppium/master/Screenshot_17.jpg)
+
+- Run new session <br/>
+  ![alt text](https://raw.githubusercontent.com/garixx/reachOutAppium/master/Screenshot_18.jpg)
+
+- Connect to your device or emulator using capabilities: <br/>
+  ![alt text](https://raw.githubusercontent.com/garixx/reachOutAppium/master/Screenshot_19.jpg)
+  
+- Select elements at device and watch locators info
