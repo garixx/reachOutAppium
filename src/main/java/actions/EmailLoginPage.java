@@ -1,10 +1,13 @@
 package actions;
 
-import io.appium.java_client.MobileBy;
 import io.qameta.allure.Step;
-import org.openqa.selenium.By;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.testng.asserts.SoftAssert;
+import org.apache.commons.io.FileUtils;
+import org.openqa.selenium.OutputType;
+import utils.Utils;
+
+import java.io.File;
+
+import static utils.DriverManager.getDriver;
 
 public class EmailLoginPage extends BasePage {
 
@@ -14,5 +17,10 @@ public class EmailLoginPage extends BasePage {
         elementWithId("com.reachout:id/etPassword").sendKeys("n12345");
         elementWithId("com.reachout:id/bEmailLogin").click();
         return new MainPage();
+    }
+
+    public EmailLoginPage grabScreenshotAs(String s) {
+        Utils.getScreenshotToResources(s);
+        return this;
     }
 }

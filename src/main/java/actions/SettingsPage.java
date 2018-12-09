@@ -1,13 +1,22 @@
 package actions;
 
-import io.appium.java_client.MobileElement;
 import io.appium.java_client.TouchAction;
-import io.appium.java_client.touch.TapOptions;
+import io.appium.java_client.imagecomparison.SimilarityMatchingResult;
+import io.appium.java_client.touch.WaitOptions;
 import io.appium.java_client.touch.offset.PointOption;
 import io.qameta.allure.Step;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.WebElement;
 import utils.DriverManager;
+import utils.Etalon;
+import utils.Utils;
 
+import java.io.File;
+import java.io.IOException;
 import java.time.Duration;
+
+import static org.testng.Assert.assertTrue;
+import static utils.DriverManager.getDriver;
 
 public class SettingsPage extends BasePage {
 
@@ -15,15 +24,48 @@ public class SettingsPage extends BasePage {
     }
 
     @Step
-    public SettingsPage findLogoutButton() {
-        scrollToText("Logout").click();
+    public SettingsPage scrollToBottom(){
+        scrollToText("Logout");
+        return this;
+    }
+
+    @Step
+    public SettingsPage findLogoutButton() throws IOException {
+        scrollToText("Logout");
         return this;
     }
 
     @Step
     public LoginPage logout() {
+        scrollToText("Logout").click();
         elementWithId("android:id/button1").click();
         return new LoginPage();
+    }
+
+    @Step
+    public SettingsPage grabScreenshotAs(String s) {
+        Utils.getScreenshotToResources(s);
+        return this;
+    }
+
+    public SettingsPage scroll() {
+
+        new TouchAction<>(DriverManager.getDriver())
+                .longPress(PointOption.point(360, 950))
+                .moveTo(PointOption.point(360, 350))
+                .release()
+                .perform();
+        return this;
+    }
+
+    @Step
+    public SettingsPage compareScreenShotWith(Etalon etalon) throws IOException {
+
+        File screenshot = getDriver().getScreenshotAs(OutputType.FILE);
+        SimilarityMatchingResult i = getDriver().getImagesSimilarity(new File(etalon.getValue()), screenshot);
+
+        assertTrue(i.getScore() > 0.95, "Settings page screenshot has similarity with the etalon image less than 95%");
+        return this;
     }
 
 

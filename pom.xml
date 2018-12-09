@@ -9,12 +9,26 @@
     <version>1.0-SNAPSHOT</version>
 
 
+    <repositories>
+        <repository>
+            <id>jitpack.io</id>
+            <url>https://jitpack.io</url>
+        </repository>
+    </repositories>
+
     <dependencies>
 
+        <!-- https://mvnrepository.com/artifact/com.sikulix/sikulixapi -->
         <dependency>
-            <groupId>io.appium</groupId>
+            <groupId>com.sikulix</groupId>
+            <artifactId>sikulixapi</artifactId>
+            <version>1.1.2</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.github.appium</groupId>
             <artifactId>java-client</artifactId>
-            <version>6.0.0</version>
+            <version>969fac6a1c6dd229bdefb02ff10e71c812701e0c</version>
         </dependency>
 
         <dependency>
