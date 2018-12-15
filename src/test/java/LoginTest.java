@@ -56,21 +56,6 @@ public class LoginTest extends BaseTest{
     }
 
     @Test
-    public void ff() throws InterruptedException {
-        int x = 360;
-        int y = 30;
-
-        for (int i = y; y<1200; i++) {
-        new TouchAction<>(getDriver())
-                .tap(PointOption.point(x,i))
-                .perform();
-        i = i +30;
-            TimeUnit.SECONDS.sleep(5);
-            System.out.println(i);
-        }
-    }
-
-    @Test
     public void gg() throws InterruptedException {
         SettingsPage s = new LoginPage()
                 .selectEmailLogin()
