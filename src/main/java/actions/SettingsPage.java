@@ -2,18 +2,15 @@ package actions;
 
 import io.appium.java_client.TouchAction;
 import io.appium.java_client.imagecomparison.SimilarityMatchingResult;
-import io.appium.java_client.touch.WaitOptions;
 import io.appium.java_client.touch.offset.PointOption;
 import io.qameta.allure.Step;
 import org.openqa.selenium.OutputType;
-import org.openqa.selenium.WebElement;
 import utils.DriverManager;
 import utils.Etalon;
 import utils.Utils;
 
 import java.io.File;
 import java.io.IOException;
-import java.time.Duration;
 
 import static org.testng.Assert.assertTrue;
 import static utils.DriverManager.getDriver;
@@ -44,7 +41,7 @@ public class SettingsPage extends BasePage {
 
     @Step
     public SettingsPage grabScreenshotAs(String s) {
-        Utils.getScreenshotToResources(s);
+        Utils.putScreenshotToResources(s);
         return this;
     }
 
@@ -63,6 +60,8 @@ public class SettingsPage extends BasePage {
 
         File screenshot = getDriver().getScreenshotAs(OutputType.FILE);
         SimilarityMatchingResult i = getDriver().getImagesSimilarity(new File(etalon.getValue()), screenshot);
+
+        saveScreenShot();
 
         assertTrue(i.getScore() > 0.95, "Settings page screenshot has similarity with the etalon image less than 95%");
         return this;

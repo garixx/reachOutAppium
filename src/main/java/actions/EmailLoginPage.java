@@ -1,13 +1,7 @@
 package actions;
 
 import io.qameta.allure.Step;
-import org.apache.commons.io.FileUtils;
-import org.openqa.selenium.OutputType;
 import utils.Utils;
-
-import java.io.File;
-
-import static utils.DriverManager.getDriver;
 
 public class EmailLoginPage extends BasePage {
 
@@ -20,7 +14,7 @@ public class EmailLoginPage extends BasePage {
     }
 
     public EmailLoginPage grabScreenshotAs(String s) {
-        Utils.getScreenshotToResources(s);
+        Utils.putScreenshotToResources(s);
         return this;
     }
 }

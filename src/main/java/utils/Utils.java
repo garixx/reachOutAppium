@@ -9,10 +9,10 @@ import java.io.File;
 import static utils.DriverManager.getDriver;
 
 public class Utils {
-    public static boolean getScreenshotToResources(String s) {
+    public static boolean putScreenshotToResources(String s) {
         try {
             File screenshot = getDriver().getScreenshotAs(OutputType.FILE);
-            FileUtils.copyFile(screenshot, new File("src\\main\\resources\\" + s));
+            FileUtils.copyFile(screenshot, new File("src/main/resources/" + s));
             return true;
         } catch (Exception e) {
             e.printStackTrace();

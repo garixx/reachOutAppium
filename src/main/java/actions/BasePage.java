@@ -1,5 +1,6 @@
 package actions;
 
+import io.qameta.allure.Attachment;
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.By;
 import org.openqa.selenium.OutputType;
@@ -44,5 +45,10 @@ public class BasePage {
         return DriverManager.getDriver()
                 .findElementByAndroidUIAutomator("new UiScrollable(new UiSelector().scrollable(true).instance(0))" +
                         ".getChildByText(new UiSelector().className(\"android.widget.TextView\"), \"" + s + "\")");
+    }
+
+    @Attachment(value = "App screenshot", type = "image/png")
+    public byte[] saveScreenShot() {
+        return DriverManager.getDriver().getScreenshotAs(OutputType.BYTES);
     }
 }
