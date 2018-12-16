@@ -26,7 +26,7 @@ public class DriverManager {
         caps.setCapability("deviceName","emulator-5554");
         caps.setCapability(MobileCapabilityType.AUTOMATION_NAME, "UiAutomator2");
 
-        driver = new AndroidDriver(new URL("http://46.211.77.215:4723/wd/hub"),caps);
+        driver = new AndroidDriver(new URL("http://192.168.42.9:4723/wd/hub"),caps);
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 
         return driver;
