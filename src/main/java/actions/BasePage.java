@@ -10,6 +10,7 @@ import org.testng.asserts.SoftAssert;
 import utils.DriverManager;
 
 import java.io.File;
+import java.time.Duration;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 

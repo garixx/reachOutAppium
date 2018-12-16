@@ -8,6 +8,8 @@
                 <!--<include name="login"/>-->
             <!--</run>-->
         <!--</groups>-->
+        <parameter name="ConnectionURL" value="http://192.168.42.9:4723/wd/hub"/>
+        <parameter name="implicitWaitSeconds" value="20"/>
 
         <classes>
             <class name="LoginTest"/>
